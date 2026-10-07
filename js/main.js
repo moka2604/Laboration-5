@@ -55,9 +55,13 @@ function displayErrors() {
  * Skapar ett studentkort och visar det på sidan.
  */
 function createStudentCard() {
-    // Hämta information från formuläret
+    previewFullname.textContent = fullnameInput.value;
+    previewEmail.textContent = emailInput.value;
+    previewPhone.textContent = phoneInput.value;
 
-    // Uppdatera studentkortet
+    previewFullname.style.fontFamily = fontSelect.value;
+    previewEmail.style.fontFamily = fontSelect.value;
+    previewPhone.style.fontFamily = fontSelect.value;
 
     // Lägg till studentkortet i historiken
 
