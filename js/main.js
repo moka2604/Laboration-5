@@ -21,23 +21,36 @@ const errorList = document.querySelector("#errorlist");
 const historySection = document.querySelector("#history");
 const deleteHistoryButton = document.querySelector("#delete");
 
-
 // Array som används för felmeddelanden
 let errors = [];
 
 // Array som innehåller sparade studentkort
 let history = [];
 
+
 /**
  * Validerar formulärets inmatning.
  * @returns {boolean}
  */
 function validateForm() {
-    // Kontrollera formulärets obligatoriska fält
+    errors = [];
 
-    // Visa eventuella felmeddelanden
+    if (fullnameInput.value.trim() === "") {
+        errors.push("Ange ditt namn.");
+    }
 
-    // Returnera resultatet (true eller false) av valideringen
+    if (emailInput.value.trim() === "") {
+        errors.push("Ange din e-postadress.");
+    } else if (!emailInput.validity.valid) {
+        errors.push("Ange en giltig e-postadress.");
+    }
+
+    if (phoneInput.value.trim() === "") {
+        errors.push("Ange ditt telefonnummer.");
+    }
+
+    displayErrors();
+    return errors.length === 0;
 }
 
 
