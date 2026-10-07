@@ -73,6 +73,13 @@ function displayErrors() {
  * Skapar ett studentkort och visar det på sidan.
  */
 function createStudentCard() {
+    const studentCard = {
+        fullname: fullnameInput.value.trim(),
+        emil: emailInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        font: fontSelect.value
+    };
+    
     previewFullname.textContent = fullnameInput.value;
     previewEmail.textContent = emailInput.value;
     previewPhone.textContent = phoneInput.value;
@@ -148,7 +155,9 @@ form.addEventListener("submit", function (event) {
     console.log("Telefon:", phoneInput.value);
     console.log("Typsnitt:", fontSelect.value);
 
-    createStudentCard();
+    if (validateForm()) {
+        createStudentCard();
+    }
 });
 
 // När användaren klickar på "Rensa"
