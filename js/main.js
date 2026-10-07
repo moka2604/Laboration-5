@@ -58,9 +58,14 @@ function validateForm() {
  * Visar felmeddelanden på sidan.
  */
 function displayErrors() {
-    // Rensa tidigare felmeddelanden
+    errorList.replaceChildren();
 
-    // Skriv ut aktuella felmeddelanden till DOM
+    errors.forEach(function (error) {
+        const listItem = document.createElement("li");
+        listItem.classList.add("error");
+        listItem.textContent = error;
+        errorList.appendChild(listItem);
+    });
 }
 
 
