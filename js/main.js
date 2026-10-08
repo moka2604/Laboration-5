@@ -89,8 +89,7 @@ function createStudentCard() {
     previewPhone.style.fontFamily = fontSelect.value;
 
     history.push(studentCard);
-
-    // Spara och uppdatera historiken
+    renderHistory();
 }
 
 
@@ -116,9 +115,25 @@ function loadHistory() {
  * Visar historiken på sidan.
  */
 function renderHistory() {
-    // Rensa tidigare visad historik
+    historySection.replaceChildren();
 
-    // Skriv ut innehållet i history till DOM
+    history.forEach(function (studentCard) {
+        const card = document.createElement("div");
+        card.classList.add("history-card");
+        card.style.fontFamily = studentCard.font;
+
+        const name = document.createElement("p");
+        name.textContent = studentCard.fullname;
+
+        const email = document.createElement("p");
+        email.textContent = studentCardard.email;
+
+        const phone = document.createElement("p");
+        phone.textContent = studentCard.phone;
+
+        card.append(name, email, phone);
+        historySection.appendChild(card);
+    });
 }
 
 
