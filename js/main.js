@@ -89,6 +89,7 @@ function createStudentCard() {
     previewPhone.style.fontFamily = fontSelect.value;
 
     history.push(studentCard);
+    saveHistory();
     renderHistory();
 }
 
@@ -97,7 +98,7 @@ function createStudentCard() {
  * Sparar historiken i localStorage.
  */
 function saveHistory() {
-    // Spara history i localStorage
+    localStorage.setItem("studentCardHistory", JSON.stringify(history));
 }
 
 
@@ -105,9 +106,19 @@ function saveHistory() {
  * Läser in tidigare historik från localStorage.
  */
 function loadHistory() {
-    // Hämta eventuell sparad historik
+    const savedHistory = localStorage.getItem("studentCardHistory");
+    if (!savedHistory) {
+        return;
+    }
 
-    // Uppdatera history
+    try {
+        const parsedHistory = JSON.parse(savedHistory);
+        if (Array.isArray(parsedHistory)) {
+            history = parsedHistory;
+        }
+    } catch (error) {
+        history = [];
+    }
 }
 
 
@@ -174,6 +185,9 @@ form.addEventListener("submit", function (event) {
         createStudentCard();
     }
 });
+
+loadHistory();
+renderHistory();
 
 // När användaren klickar på "Rensa"
 
