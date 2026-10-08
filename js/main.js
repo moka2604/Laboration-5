@@ -88,7 +88,7 @@ function createStudentCard() {
     previewEmail.style.fontFamily = fontSelect.value;
     previewPhone.style.fontFamily = fontSelect.value;
 
-    // Lägg till studentkortet i historiken
+    history.push(studentCard);
 
     // Spara och uppdatera historiken
 }
