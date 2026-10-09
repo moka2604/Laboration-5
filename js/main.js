@@ -75,7 +75,7 @@ function displayErrors() {
 function createStudentCard() {
     const studentCard = {
         fullname: fullnameInput.value.trim(),
-        emil: emailInput.value.trim(),
+        email: emailInput.value.trim(),
         phone: phoneInput.value.trim(),
         font: fontSelect.value
     };
@@ -162,7 +162,7 @@ function clearForm() {
     previewPhone.style.fontFamily = fontSelect.value;
 
     errors = [];
-    dispalyErrors();
+    displayErrors();
 }
 
 
