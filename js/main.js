@@ -80,13 +80,13 @@ function createStudentCard() {
         font: fontSelect.value
     };
     
-    previewFullname.textContent = fullnameInput.value;
-    previewEmail.textContent = emailInput.value;
-    previewPhone.textContent = phoneInput.value;
+    previewFullname.textContent = studentCard.fullname;
+    previewEmail.textContent = studentCard.email;
+    previewPhone.textContent = studentCard.phone;
 
-    previewFullname.style.fontFamily = fontSelect.value;
-    previewEmail.style.fontFamily = fontSelect.value;
-    previewPhone.style.fontFamily = fontSelect.value;
+    previewFullname.style.fontFamily = studentCard.font;
+    previewEmail.style.fontFamily = studentCard.font;
+    previewPhone.style.fontFamily = studentCard.font;
 
     history.push(studentCard);
     saveHistory();
