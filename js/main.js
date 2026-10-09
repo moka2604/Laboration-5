@@ -137,7 +137,7 @@ function renderHistory() {
         name.textContent = studentCard.fullname;
 
         const email = document.createElement("p");
-        email.textContent = studentCardard.email;
+        email.textContent = studentCard.email;
 
         const phone = document.createElement("p");
         phone.textContent = studentCard.phone;
